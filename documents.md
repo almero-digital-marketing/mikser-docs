@@ -95,7 +95,7 @@ date: 2015-10-12
 <p>his is the content of the post in <a href="http://daringfireball.net/projects/markdown/">Markdown<a/>.
 ```
 
-## Meta data routing
+### Meta data routing
 You can import meta data to the document based on the folder structure where documents are located. Meta data configuration is an array of routes defined inside `mikser.yml`.
 
 ```yaml
