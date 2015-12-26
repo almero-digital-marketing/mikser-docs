@@ -1,5 +1,5 @@
 ## Folder structure
-Mikser is a flat file system. Entire site is stored in files which are separated into several folders. When you run Mikser for the first time, in an empty folder, it will create all the necessary folders inside.
+Mikser is a flat file CMS. Entire site is stored in files which are separated into several folders. When you run Mikser for the first time, in an empty folder, it will create all the necessary folders inside.
 
 * `documents` - Here you put all the document that represent the data for your web site. The documents can be plain text, html, markdown, any of those with front matter or documents that store serialized data in yaml, toml, json, aml, etc.
 * `layouts` - Here you put all the layouts(templates) that define how to render those documents. Mikser supports many template engine like Ect, Eco, Jade, Swig, Ejs, etc. Mikser supports also blocks(partials) and shortcodes which are also stored in this folder. Layouts can have front matter too.
