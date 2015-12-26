@@ -5,7 +5,7 @@
 	* [Structured data documents](documents.md#structured-data-documents)
 	* [Documents with front matter](documents.md#documents-with-front-matter)
 	* [Anything with front matter](documents.md#anything-with-front-matter)
-	* [Metadata routing](documents.md#meta-data-routing)
+	* [Meta data routing](documents.md#meta-data-routing)
 * Layouts
 	* Basic layout usage
 		* Master layout
