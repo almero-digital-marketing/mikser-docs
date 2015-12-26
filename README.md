@@ -51,6 +51,6 @@
 	* Plugins used in layouts
 	* Plugins used in mikser
 * Continuous integration
-* sLarge site optimizations
+* Large site optimizations
 
 
