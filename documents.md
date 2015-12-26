@@ -66,7 +66,7 @@ date: 2015-10-12
 This is the content of the post in [Markdown](http://daringfireball.net/projects/markdown/).
 ```
 
-If you want you can use any of the structured data formats by adding it at the end of the beginning of the front matter. In the example you can see front matter in `JSON`.
+If you want you can use any of the structured data formats by adding it at the end of the beginning of the front matter. In this example you can see front matter in `JSON`.
 
 ```md
 ---json
@@ -81,15 +81,30 @@ If you want you can use any of the structured data formats by adding it at the e
 This is the content of the post in [Markdown](http://daringfireball.net/projects/markdown/).
 ```
 
-### Meta data routing
-You can import meta data to the document based on the folder structure where documents are located. Can configure meta data routes inside `mikser.yml`.
+### Anything with front matter
+If you want you can have documents in any format. Those documents can have front matter too. Here is an example of the previous post using HTML instead of Markdown. Mikser will keep the document extension inside `out` folder.
+
+```html
+---
+layout: /blog/post.ect
+title: Item title
+description: Item description
+date: 2015-10-12
+---
+<h1>Example post<h1>
+<p>his is the content of the post in <a href="http://daringfireball.net/projects/markdown/">Markdown<a/>.
+```
+
+## Meta data routing
+You can import meta data to the document based on the folder structure where documents are located. Meta data configuration is an array of routes defined inside `mikser.yml`.
 
 ```yaml
 routes:
 - /posts/:category/:date/*postId
+- /items/:category/*itemId
 ```
 
-If you store your post inside `/posts/nodejs/2015-12-10/post-1.md` it will merge some extra properties in its meta data. This is equal to adding following information to the document front matter.
+If you store your post inside `/posts/nodejs/2015-12-10/post-1.md` it will merge some extra properties in its meta data. This is equal to adding the following information to the document front matter.
 
 ```md
 ---
