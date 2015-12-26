@@ -1,5 +1,5 @@
 ## Mikser documentation
-Here you can find documentation, examples and tutorials about [Mikser](https://github.com/almero-digital-marketing/mikser/)
+[Mikser](https://github.com/almero-digital-marketing/mikser/) documentation, examples and tutorials. 
 
 * [Folder structure](folder-structure.md)
 * [Documents](documents.md)
