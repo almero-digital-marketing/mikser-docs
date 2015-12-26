@@ -1,5 +1,5 @@
 ## Documents
-Mikser does not force any predefined document structure. It is general purpose static site generator. It is up to you how will you organize your documents. Documents might have have front matter and/or content. You can also have documents in a structured format. There are several document formats that are supported in Mikser by default.
+Mikser does not force any predefined document structure. It is general purpose static site generator. It is up to you to  organize your documents. Documents might have a front matter and/or content. You can also have documents in a structured format. There are several document formats that are supported in Mikser by default.
 
 * **Structured data formats** - Mikser supports documents in [Yaml](http://www.yaml.org/), [Toml](https://github.com/toml-lang/toml), [ArchieML](http://archieml.org/), [CSON](https://github.com/bevry/cson), [JSON5](http://json5.org/)
 * **Markdown or Textile documents with front matter** - You can have [Markdown](http://daringfireball.net/projects/markdown/) or [Textile](http://redcloth.org/textile/) documents with front matter. Front matter can be in any of the structured data formats.
@@ -62,8 +62,9 @@ title: Item title
 description: Item description
 date: 2015-10-12
 ---
-
 # Example post
+This is the content of the post in [Markdown](http://daringfireball.net/projects/markdown/).
+```
 
 If you want you can use any of the structured data formats by adding it at the end of the beginning of the front matter. In the example you can see front matter in `JSON`.
 
@@ -76,7 +77,6 @@ If you want you can use any of the structured data formats by adding it at the e
 	"date": "2015-10-12"
 }
 ---
-
 # Example post
 This is the content of the post in [Markdown](http://daringfireball.net/projects/markdown/).
 ```
