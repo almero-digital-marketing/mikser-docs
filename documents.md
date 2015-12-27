@@ -106,10 +106,7 @@ routes:
 
 If you store your post inside `/posts/nodejs/2015-12-10/post-1.md` it will merge some extra properties in its meta data. This is equal to adding the following information to the document front matter.
 
-```md
----
-…
+```yaml
 category: nodejs
 date: 2015-12-10
----
 ```
