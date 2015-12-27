@@ -30,7 +30,7 @@ Structured data is stored inside document's `meta` property. The format of the s
 If the structured document has a `layout`, but does not have a `destination` it will be rendered with the same same name and `.html` extension inside `out` folder. If it does not have `layout` it wont be rendered and just imported in the runtime.
 
 #### Example
-`item.yaml` [Yaml](http://www.yaml.org/) document that represents an item in an on-line shop.
+`item.yaml` [YAML](http://www.yaml.org/) document that represents an item in an on-line shop.
 
 ```yaml
 layout: /shop/item.jade
@@ -50,10 +50,10 @@ images:
 ```
 
 ### Documents with front matter
-The same rules that apply to the structured documents apply to the front matter. The front matter is considered to be in [Yaml](http://www.yaml.org/) by default. 
+The same rules that apply to the structured documents apply to the front matter. The front matter is considered to be in [YAML](http://www.yaml.org/) by default. 
 
 #### Example
-`post.md` [Markdown](http://daringfireball.net/projects/markdown/) document with [Yaml](http://www.yaml.org/) front matter representing a post inside a blog.
+`post.md` [Markdown](http://daringfireball.net/projects/markdown/) document with [YAML](http://www.yaml.org/) front matter representing a post inside a blog.
 
 ```md
 ---
