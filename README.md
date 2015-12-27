@@ -3,14 +3,14 @@
 * [Folder structure](folder-structure.md)
 * [Documents](documents.md)
 	* [Structured data documents](documents.md#structured-data-documents)
-	* [Documents with front matter](documents.md#documents-with-front-matter)
+	* [Markup documents with front matter](documents.md#markup-documents-with-front-matter)
 	* [Anything with front matter](documents.md#anything-with-front-matter)
 	* [Meta data routing](documents.md#meta-data-routing)
 * Layouts
 	* Basic layout usage
 		* Master layout
 		* Child layout
-		* Referring metadata
+		* Referring meta data
 		* Referring documents from layouts
 		* Using auto layouts
 	* Using blocks
@@ -20,7 +20,7 @@
 		* By layout
 		* By layout with sorting
 		* Data queries
-	* Using shortcodes
+	* Using short codes
 	* Using paging
 * Integrating external tools
 	* CSS preprocessors
@@ -30,13 +30,18 @@
 * Reference tracking
 * Debugging
 	* Error diagnostics
-	* Debugging mikser
-* Plugins
-	* Collections plugin
-	* Markup and template plugins
-	* Images plugin
-	* Videos plugin
-	* Caching plugin
+	* Debug information
+* Extending with plugins
+	* Plugins used in layouts
+	* Plugins used in mikser
+	* Build-in plugins
+		* Collections plugin
+		* Markup and template plugins
+		* Images plugin
+		* Videos plugin
+		* Caching plugin
+	* Third-party plugins
+	* Custom plugins
 * Multi language
 	* Referring documents from different languages
 	* Alternates
@@ -46,10 +51,6 @@
 * Mikser configuration
 * Mikser life cycle
 * Command line arguments
-* Extending with plugins
-	* Finding plugins
-	* Plugins used in layouts
-	* Plugins used in mikser
 * Continuous integration
 * Large site optimizations
 
