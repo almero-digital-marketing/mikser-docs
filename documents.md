@@ -23,7 +23,7 @@ Structured data is stored inside document's `meta` property. The format of the s
 
 * `layout` - The absolute path of the layout used to render the document. The absolute path to the layout is relative to the `layouts` folder.
 * `href` - URL like string used to identify a document. It is useful in multi-language sites where you will have alternate documents with the same `href` and different languages'.
-* `lang` - The value of the hreflang attribute identifies the language (in [ISO 639-1](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format) and optionally the region (in [ISO 3166-1](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format)
+* `lang` - The value of the lang attribute identifies the language (in [ISO 639-1](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format) and optionally the region (in [ISO 3166-1](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format)
 * `destination` - The destination is absolute path of the rendered document. This will overwrite the default `destination` value. The destination is relative to the `out` folder.
 * `render` - Boolean value that tells Mikser if the document should be rendered. The default value is `true`.
 
