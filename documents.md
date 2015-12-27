@@ -92,7 +92,7 @@ description: Item description
 date: 2015-10-12
 ---
 <h1>Example post<h1>
-<p>his is the content of the post in <a href="http://daringfireball.net/projects/markdown/">Markdown<a/>.
+<p>his is the content of the post in <a href="http://daringfireball.net/projects/markdown/">Markdown</a>.</p>
 ```
 
 ### Meta data routing
