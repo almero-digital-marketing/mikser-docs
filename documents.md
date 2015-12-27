@@ -109,4 +109,5 @@ If you store your post inside `/posts/nodejs/2015-12-10/post-1.md` it will merge
 ```yaml
 category: nodejs
 date: 2015-12-10
+postId: post-1.md
 ```
