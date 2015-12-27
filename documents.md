@@ -1,9 +1,9 @@
 ## Documents
 Mikser does not force any predefined document structure. It is general purpose static site generator. It is up to you to  organize your documents. Documents might have a front matter and/or content. You can also have documents in a structured format. There are tree document types that are supported in Mikser.
 
-* **Structured data formats** - Mikser supports documents in [YAML](http://www.yaml.org/), [TOML](https://github.com/toml-lang/toml), [ArchieML](http://archieml.org/), [CSON](https://github.com/bevry/cson), [JSON5](http://json5.org/) or nay other format with a custom plugin
+* **Structured data formats** - Mikser supports documents in [YAML](http://www.yaml.org/), [TOML](https://github.com/toml-lang/toml), [ArchieML](http://archieml.org/), [CSON](https://github.com/bevry/cson), [JSON5](http://json5.org/) or any other format with a custom plugin
 * **Markup documents with front matter** - You can have [Markdown](http://daringfireball.net/projects/markdown/) or [Textile](http://redcloth.org/textile/) documents with front matter. Front matter can be in any of the structured data formats. You can add more markup formats with plugins.
-* **Anything with front matter** - You can have documents in any format (XML, HTMl, etc.) with front matter.
+* **Anything with front matter** - You can have documents in any format (XML, HTML, etc.) with front matter.
 
 Documents are imported into Mikser database with the following structure.
 
