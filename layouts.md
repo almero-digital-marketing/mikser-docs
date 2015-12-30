@@ -42,7 +42,8 @@ This is the content of the post in [Markdown](http://daringfireball.net/projects
 For our [Markdown](http://daringfireball.net/projects/markdown/) document the `@content` will output the rendered HTML of the document's content.
 
 ### Referring meta data
-There several objects that you can access from the layout.
+There are several objects that you can access inside a layout.
+
 * `document` - This object holds currently rendered document. You can access document meta data by doing 'document.meta'.
 * `layout` - This is an on object pointing to the current layout. You can access layout meta data by doing 'layout.meta'.
 * `data` - This an object that holds all the data loaded by the queries defined in the layout's front matter.
