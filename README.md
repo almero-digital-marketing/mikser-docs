@@ -23,7 +23,7 @@
 	* Using auto layouts
 * Tools
 	* Preprocessors and complicators
-	* Using build systems
+	* Build systems
 * Server
 	* Live reload
 	* Watching folders
@@ -33,13 +33,13 @@
 	* Debug information
 * Plug-ins
 	* Layout plug-ins
-	* Mikser plug-ins
+	* System plug-ins
 	* Build-in plug-ins
-		* Collections
-		* Markup and template engines plug-ins
-		* Images
-		* Videos
-		* Caching
+		* Markup and template plug-ins
+		* Collections plug-in
+		* Images plug-in
+		* Videos plug-in
+		* Caching plug-in
 	* Third-party plug-ins
 	* Custom plug-ins
 * Multi-language web sites
@@ -51,4 +51,3 @@
 * Configuration
 * Command line arguments
 * Continuous integration
-
