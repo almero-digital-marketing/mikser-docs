@@ -3,10 +3,10 @@ In Mikser layouts define how documents will be rendered. Layouts are stored in t
 
 Mikser selects the right template engine to use based on the layout extension. Layouts can have front matter. The data from the front matter is is imported in the layout's meta property. There are several reserved properties and all of them are optional.
 
-* `layout` - Each layout can define a parent another layout. This is the absolute path of the parent layout. The absolute path is relative to the `layouts` folder.
+* `layout` - Each layout can define a parent layout. This is the absolute path to the parent layout. The absolute path is relative to the `layouts` folder.
 * `data` - This property is used to define data queries used by the layout to retrieve data from the database.
-* `blocks` - A list of layouts which will imported as blocks(partial) and used inside the layout.
-* `shrotcodes` - A list of layouts which will exposed as short codes to the documents using this layout.
+* `blocks` - A list of layouts which will imported as blocks(partials) and used inside the layout.
+* `shrotcodes` - A list of layouts which will be exposed as short codes than can be used inside the documents which use this layout.
 * `plugins` - A list of plug-ins used in the layout.
 
 Mikser supports different template engines working together, It's perfectly fine to use [Ect](http://ectjs.com/) for a layout, [Ejs](http://ejs.co/) for its parent layout, [Jade](http://jade-lang.com/) for the blocks and [Swig](http://paularmstrong.github.io/swig/) for the short codes.
