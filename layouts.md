@@ -1,11 +1,5 @@
 ## Layouts
-In Mikser layouts define how documents will be rendered. Layouts are stored in the `layouts` folder. Mikser has build-in support for the following layout(template) engines.
-
-* [Jade](http://jade-lang.com/)
-* [Eco](https://github.com/sstephenson/eco)
-* [Ect](http://ectjs.com/)
-* [Ejs](http://ejs.co/)
-* [Swig](http://paularmstrong.github.io/swig/)
+In Mikser layouts define how documents will be rendered. Layouts are stored in the `layouts` folder. Mikser has build-in support for the following layout(template) engines - [Jade](http://jade-lang.com/), [Eco](https://github.com/sstephenson/eco), [Ect](http://ectjs.com/), [Ejs](http://ejs.co/), [Swig](http://paularmstrong.github.io/swig/).
 
 Mikser selects the right template engine to use based on the layout extension. Layouts can have front matter. There meta data is imported in the layout's meta property. There are several reserved properties and all of them are optional.
 
