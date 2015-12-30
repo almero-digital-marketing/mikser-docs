@@ -1,7 +1,7 @@
 ## Layouts
 In Mikser layouts define how documents will be rendered. Layouts are stored in the `layouts` folder. Mikser has build-in support for the following layout(template) engines - [Jade](http://jade-lang.com/), [Eco](https://github.com/sstephenson/eco), [Ect](http://ectjs.com/), [Ejs](http://ejs.co/) and [Swig](http://paularmstrong.github.io/swig/).
 
-Mikser selects the right template engine to use based on the layout extension. Layouts can have front matter. There meta data is imported in the layout's meta property. There are several reserved properties and all of them are optional.
+Mikser selects the right template engine to use based on the layout extension. Layouts can have front matter. The data from the front matter is is imported in the layout's meta property. There are several reserved properties and all of them are optional.
 
 * `layout` - Each layout can define a parent another layout. This is the absolute path of the parent layout. The absolute path is relative to the `layouts` folder.
 * `data` - This property is used to define data queries used by the layout to retrieve data from the database.
