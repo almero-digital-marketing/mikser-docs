@@ -6,13 +6,13 @@ Mikser selects the right template engine to use based on the layout extension. L
 * `layout` - Each layout can define a parent layout. This is the absolute path to the parent layout. The absolute path is relative to the `layouts` folder.
 * `data` - This property is used to define data queries used by the layout to retrieve data from the database.
 * `blocks` - A list of layouts which will imported as blocks(partials) and used inside the layout.
-* `shrotcodes` - A list of layouts which will be exposed as short codes than can be used inside the documents which use this layout.
+* `shrotcodes` - A list of layouts which will be exposed as short codes that can be used inside the documents which use this layout.
 * `plugins` - A list of plug-ins used in the layout.
 
 Mikser supports different template engines working together, It's perfectly fine to use [Ect](http://ectjs.com/) for a layout, [Ejs](http://ejs.co/) for its parent layout, [Jade](http://jade-lang.com/) for the blocks and [Swig](http://paularmstrong.github.io/swig/) for the short codes.
 
 ### Basic layout usage
-Let's define a very basic layout that will render a markdown document as an HTML page and use [Ect](http://ectjs.com/) template engine. Let's call this layout `html5.ect` and save it directly in layouts folder.
+Let's define a very basic layout that will render a [Markdown](http://daringfireball.net/projects/markdown/) document as an HTML page and use [Ect](http://ectjs.com/) template engine. Let's call this layout `html5.ect` and save it directly in layouts folder.
 
 ```html
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ Let's define a very basic layout that will render a markdown document as an HTML
 </html>
 ```
 
-This layout will render document content inside a `body` tag. The `@content` holds a rendered document contents. If we have a use this layout inside a markdown document the `@content` will output the rendered HTML of the document contents.
+This layout will render a document's content inside a `body` tag. The `@content` holds a rendered document contents. For our [Markdown](http://daringfireball.net/projects/markdown/) document the `@content` will output the rendered HTML of the document`s [Markdown](http://daringfireball.net/projects/markdown/) contents.
 
 ```md
 ---
