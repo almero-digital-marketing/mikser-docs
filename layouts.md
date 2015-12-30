@@ -44,10 +44,10 @@ For our [Markdown](http://daringfireball.net/projects/markdown/) document the `@
 ### Referring meta data
 There are several objects that you can access inside a layout.
 
-* `document` - This object holds currently rendered document. You can access document meta data by doing 'document.meta'.
-* `layout` - This is an on object pointing to the current layout. You can access layout meta data by doing 'layout.meta'.
-* `data` - This an object that holds all the data loaded by the queries defined in the layout's front matter.
-* `blocks` - This object has functions that will render the blocks defined in the layout's front matter.
+* `document` - This object holds currently rendered document. You can access document meta data by doing `document.meta`.
+* `layout` - This is an on object pointing to the current layout. You can access layout meta data by doing `layout.meta`.
+* `data` - This object holds all the data loaded by the queries defined in the layout's front matter `data` element.
+* `blocks` - This object has functions that will render the blocks defined in the layout's front matter `blocks` element.
 
 Let's extend our previous example by using the document title and description in the `html5.ect` layout.
 
