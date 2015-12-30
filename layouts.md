@@ -49,7 +49,7 @@ There are several objects that you can access inside a layout.
 * `data` - This object holds all the data loaded by the queries defined in the layout's front matter `data` element.
 * `blocks` - This object has functions that will render the blocks defined in the layout's front matter `blocks` element.
 
-Let's extend our previous example by using the document title and description in the `html5.ect` layout.
+Let's extend our previous example by using the document `title` and `description` in the `html5.ect` layout.
 
 ```html
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ Let's extend our previous example by using the document title and description in
 ```
 
 ### Layout inheritance
-In Mikser layouts support inheritance. We already defined a very generic layout. Let's create another one that will will be used just for posts. This time we will use [Jade](http://jade-lang.com/) as a template engine.
+In Mikser layouts support inheritance. We already defined a very generic layout. Let's create another one that will be used just for posts. This time we will use [Jade](http://jade-lang.com/) as a template engine.
 
 ```jade
 ---
@@ -90,9 +90,9 @@ image: /images/image-1.jpg
 # Example post
 This is the content of the post in [Markdown](http://daringfireball.net/projects/markdown/).
 ```
-Let's see how the inheritance works. Fist Mikser renders the Markdown document content. Then it renders the layout defined in the document meta data. In this case this is `/post.jade`. As you can see we are using the document meta data and the content inside this layout. Then the result of this render is passed to layout defined in the `/post.jade` in our case this is `/html5.ect`. Now when we refer to the content inside `/html5.ect` it will be the result of  the rendered `/post.jade`.
+Let's see how the inheritance works. Fist Mikser renders the [Markdown](http://daringfireball.net/projects/markdown/) document content. Then it renders the layout defined in the document meta data. In our example this is `/post.jade`. As you can see we are using the document meta data and the content inside this layout. Then the result of this render is passed to the layout defined in the `/post.jade` in our case this is `/html5.ect`. Now when we refer to the `content` inside the `/html5.ect` it will output the result of the rendered `/post.jade`.
 
-Lets create another document this time an YAML document representing an item in an on-line shop and create a layout for this kind of documents using a [Swig](http://paularmstrong.github.io/swig/) template engine.
+Lets create another document this time an [YAML](http://www.yaml.org/) document representing an item in an on-line shop and create a layout for this kind of documents using a [Swig](http://paularmstrong.github.io/swig/) template engine.
 
 ```yaml
 layout: /shop/item.swig
@@ -104,7 +104,7 @@ features:
 - Feature 3
 ```
 
-Here is the `/shop/item.swig` layout, it uses `/html5.ect` as a parent layout. We can group layouts in folders and we will put this one in a folder called `shop` inside `layouts` folder.
+Now lets create the `/shop/item.swig` layout, it uses `/html5.ect` as a parent layout. We can group layouts in folders and we will put this one in a folder called `shop` inside `layouts` folder.
 
 ```html
 ---
@@ -121,7 +121,7 @@ layout: /html5.ect
 </ul>
 ```
 
-As you can see when the document has no content we work only with the meta data. This will render first the `/shop/item.swig` layout using meta data from the document and then `/html5.ect` layout which will get the result of the `/shop/item.swig` render in the `content` property.
+As you can see when the document has no content we can work only with the meta data. This will render first the `/shop/item.swig` layout using meta data from the document and then `/html5.ect` layout which will get the result of the previous render in the `content` property.
 
 ### Using data queries
 #### Layout queries
