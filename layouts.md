@@ -25,7 +25,7 @@ Let's define a very basic layout that will render a [Markdown](http://daringfire
 </html>
 ```
 
-This layout will render a document's content inside a `body` tag. The `@content` holds a rendered document contents. For our [Markdown](http://daringfireball.net/projects/markdown/) document the `@content` will output the rendered HTML of the document`s [Markdown](http://daringfireball.net/projects/markdown/) contents.
+This layout will render a document's content inside a `body` tag. The `@content` holds a rendered document contents.
 
 ```md
 ---
@@ -38,6 +38,8 @@ image: /images/image-1.jpg
 # Example post
 This is the content of the post in [Markdown](http://daringfireball.net/projects/markdown/).
 ```
+
+For our [Markdown](http://daringfireball.net/projects/markdown/) document the `@content` will output the rendered HTML of the document`s [Markdown](http://daringfireball.net/projects/markdown/) contents.
 
 ### Referring meta data
 There several objects that you can access from the layout.
