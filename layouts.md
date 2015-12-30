@@ -39,7 +39,7 @@ image: /images/image-1.jpg
 This is the content of the post in [Markdown](http://daringfireball.net/projects/markdown/).
 ```
 
-For our [Markdown](http://daringfireball.net/projects/markdown/) document the `@content` will output the rendered HTML of the document`s [Markdown](http://daringfireball.net/projects/markdown/) contents.
+For our [Markdown](http://daringfireball.net/projects/markdown/) document the `@content` will output the rendered HTML of the document's content.
 
 ### Referring meta data
 There several objects that you can access from the layout.
