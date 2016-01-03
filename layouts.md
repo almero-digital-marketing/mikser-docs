@@ -129,14 +129,6 @@ In the layout front matter we can define queries which will return collections o
 #### Layout queries
 Let's create another layout that will list all the items in the shop. We will put this layout in `/shop/items.swig`. 
 
-```yaml
-layout: /shop/items.nunjucks
-title: List of all items
-description: This will render a listing
-```
-
-We have to create a document that will use this item as sell. We will call the document `items.yml`.
-
 ```html
 ---
 layout: /html5.ect
@@ -160,7 +152,15 @@ data:
 </ul>
 ```
 
-You can define as many data queries. This is the simplest syntax, you have to provide only the layout of the documents to select. You can also specify sort order in the `data` definition. As you can see you can only the shorter syntax for the sorting passing only the document property to use for the sorting. If you need you can also provide the sort order 1 for ascending -1 for descending.
+We have to create a document that will use this layout as well. We will call the document `items.yml`.
+
+```yaml
+layout: /shop/items.nunjucks
+title: List of all items
+description: This will render a listing
+```
+
+In the layout you can define as many data queries as you like. This is the simplest syntax, you have to provide only the layout of the documents to select. You can also specify sort order in the `data` definition. As you can see you can only the shorter syntax for the sorting passing only the document property to use for the sorting. If you need you can also provide the sort order 1 for ascending -1 for descending.
 
 #### Context queries
 It's very convenient to query for documents by the layout but sometimes this is not enough. Mikser layouts supports external queries that has access to the all the properties that available in the layout.
