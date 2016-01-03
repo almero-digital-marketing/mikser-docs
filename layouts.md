@@ -343,7 +343,7 @@ Now we have to define the short code in the layout. Everything that applies to t
  ```jade
 ---
 layout: /html5.ect
-shortcodes:
+shortcodes: 
   video: /video.jade
   audio: /audio.jade
 ---
