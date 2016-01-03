@@ -251,7 +251,7 @@ If you don't specify a `href` in the document's meta data it will be initialized
 
 If you want to get a relative path to the root you can user `href('/')` to get it or pass get relative URL to a style sheet by `href('/styles/style.css')`.
 
-### Blocks(Partials)
+### Blocks (Partials)
 You can use any layout as block(partial) in any other layout. In Mikser we use the term blocks and you have to define them in the layout meta data. Let's create a layout that will render a navigation for our site. We will call it `/navigation.ect`.
 
 ```html
