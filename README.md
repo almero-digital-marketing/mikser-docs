@@ -21,7 +21,7 @@
 	* [Paging](layouts.md#paging)
 	* [Using auto layouts](layouts.md#using-auto-layouts)
 * Tools
-	* Preprocessors and complicators
+	* Preprocessors and compilators
 	* Build systems
 * Server
 	* Live reload
