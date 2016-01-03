@@ -160,10 +160,10 @@ title: List of all items
 description: This will render a listing
 ```
 
-In the layout you can define as many data queries as you like. This is the simplest syntax, you have to provide only the layout of the documents to select. You can also specify sort order in the `data` definition. As you can see you can only the shorter syntax for the sorting passing only the document property to use for the sorting. If you need you can also provide the sort order 1 for ascending -1 for descending.
+In the layout you can define as many data queries as you like. This is the simplest syntax, you have to provide only the layout of the documents to select. You can also specify sort order in the `data` definition. As you can see you can a shorter syntax for the sorting too passing only the document property to use for the sorting. If you need you can also provide the sort order 1 for ascending -1 for descending.
 
 #### Context queries
-It's very convenient to query for documents by the layout but sometimes this is not enough. Mikser layouts supports external queries that has access to the all the properties that available in the layout.
+It's very convenient to query for documents by the layout but sometimes this is not enough. Mikser layouts supports external queries that has access to the all the properties that are available in the layout.
 
 
 ```js
@@ -175,7 +175,7 @@ It's very convenient to query for documents by the layout but sometimes this is 
 }
 ```
 
-You can save this query as `items-by-feature.query` in a `data` folder in your project. Then you have to refer it in the layout.
+You can save this query as `items-by-feature.query` in a `data` folder inside your project. Then you can refer it in the layout.
 
 ```html
 ---
@@ -196,10 +196,10 @@ data:
 {% endfor %}
 </ul>
 ```
-As you can see you have an access to the meta data inside the query. In this example you will load all documents that has `Feature 1` or `Feature 1`. You can have use any JavaScript expression in the queries. Queries use [MongoDB query syntax](https://docs.mongodb.org/v3.0/reference/operator/query/).
+As you can see you have an access to all of the meta data inside the query. In this example you will load all documents that has `Feature 1` or `Feature 1` which are defined in the layout's meta data. You can use any JavaScript expression in the queries. Queries use [MongoDB query syntax](https://docs.mongodb.org/v3.0/reference/operator/query/).
 
 ### Referring other documents from layouts
-One of the very core thing in writing a layout is refereeing to other documents and assets. You can always refer to a document by using `document.url` or the absolute url of an asset `/images/image.jpg`. The problem with this approach is that you want be able to open you generated site from the file system. And it should be placed in the domain root when uploaded to a hosting provider. It's much better to use relative URL's. Mikser defines a helper method `href` that gives you a relative URL.
+One of the very core things in writing a layout is refereeing to other documents or assets. You can always refer to a document by using `document.url` or the absolute URL of an asset `/images/image.jpg`. The problem with this approach is that you won't be able to open you generated web site from the file system. And it should be placed in the domain root when uploaded to a hosting provider. It's much better to use relative URL's. Mikser defines a helper method `href` that gives you a relative URL.
 
 ```html
 ---
@@ -217,17 +217,15 @@ data:
 </ul>
 ```
 
-`href` will return relative path to any asset or document. It wont check if the asset exists it will calculate the relative path by the given input only and it will be relative to the currently rendering document. There is another interesting concept behind it. You can define a `href` inside the document meta data.
+`href` returns a relative path to any given absolute URL of an asset or a document. It won't check if the URL  exists. It calculates the relative path by the given input only and the result is relative to the currently rendering document. There is another interesting concept to know about, you can define a `href` inside the document meta data.
 
-```
----
+```yaml
 layout: /html5.ect
 href: /services
 title: Services
----
 ```
 
-Having `href` inside a document will let you refer to the document by its `href` no matter what file name you use to save it. Lets update the `/html5.ect` and add a link to the document with `href` equal to `/services`.
+Having `href` inside a document will let you refer to the document by this `href` no matter what file name you use to save it. Lets update the `/html5.ect` and add a link to the document with `href` equal to `/services`.
 
 ```html
 <!DOCTYPE html>
@@ -241,20 +239,20 @@ Having `href` inside a document will let you refer to the document by its `href`
 </html>
 ```
 
-This will use the relative path to the `/services` in all document that use `/html5.ect` as a layout. Later on if you change the name or move the `/services` document inside different folder all the links will update accordingly.
+This will use the relative path to the `/services` in all documents that use `/html5.ect` as a layout. Later on if you change the name or move the `/services` document inside different folder all the links will update accordingly.
 
-Another important aspect of the `href` is that it keeps track of the cross document references and when you change the `/services` title, Mikser will regenerate all the document that refer to it with the new title. We highly recommend using `href` as much as possible.
+Another important aspect of the `href` method is that it keeps track of the cross document references and when you change the `/services` title, Mikser will regenerate all the document that refer to it with the new title. We highly recommend using `href` as much as possible.
 
-If you don't specify a `href` in the document's meta data it will be initialized with absolute path to the document relative to the `documents` folder. If you save the service document to `services.md` you can use `services.md` as a `href` argument.
+If you don't specify a `href` in the document's meta data it will be initialized with the absolute path to the document relative to the `documents` folder. If you save the service document to `services.md` you can use `/services.md` as a `href` argument.
 
 ```html
 <a href="<%- @href('/services.md') %>"><%= @href('/services.md').meta.title %></a>
 ```
 
-If you want to get a relative path to the root you can user `href('/')` to get it.
+If you want to get a relative path to the root you can user `href('/')` to get it or pass get relative URL to a style sheet by `href('/styles/style.css')`.
 
 ### Blocks(Partials)
-You can use any layout as block(partial) in any other layout. In Mikser we refer them as blocks and we define them in the layout meta data. Let's create a layout that will render a navigation for our site. We will call it `/navigation.ect`.
+You can use any layout as block(partial) in any other layout. In Mikser we use the term blocks and you have to define them in the layout meta data. Let's create a layout that will render a navigation for our site. We will call it `/navigation.ect`.
 
 ```html
 <a href="<%- @href('/services.md') %>"><%= @href('/services.md').meta.title %></a>
@@ -280,10 +278,10 @@ blocks:
 </html>
 ```
 
-Everything that applies to the layouts applies to the blocks as well. All blocks defined in the `/html5.ect` layout will available to the child layouts using it. If some of them override it with another block it will be used in `/html5.ect` instead of the `/navigation.ect`.
+Everything that applies to the layouts applies to the blocks as well. All blocks defined in the `/html5.ect` layout will be available to the child layouts using it. If some of them override it with another block it will be used in `/html5.ect` instead of the `/navigation.ect`.
 
-#### Uing blocks with options
-You can pass any object to a block and refer it inside the block as `options`. Here is a block that will render a preview of a post.
+#### Using blocks with options
+You can pass any object to a block and refer it inside the block as `options`. Here is a block `/post-preview.nunjucks` that will render a preview of a post.
 
 ```html
 <a href="{{ href(post) }}">{{ options.meta.title }}</a>
@@ -296,21 +294,21 @@ Now we will update `/posts.nunjuncks` so it will use this block.
 ---
 layout: /html5.ect
 blocks:
-  post: /post.jade
+  postPreview: /post-preview.nunjucks
 data:
   posts: /post.jade
 ---
 <ul>
 {% for post in data.posts %}
   <li>
-    {{ blocks.post(post) }}
+    {{ blocks.postPreview(post) }}
   </li>
 {% endfor %}
 </ul>
 ```
 
 ### Short codes
-Short codes are very similar to the blocks. The main difference is they can be used inside a document. A document can use only the short codes defined in its layout.
+Short codes are very similar to the blocks. The main difference is that they can be used inside a document. A document can use only the short codes defined in its layout.
 
 ```md
 ---
@@ -324,14 +322,14 @@ image: /images/image-1.jpg
 This is the content of the post in [Markdown](http://daringfireball.net/projects/markdown/).
 [video src="http://youtube.com/video.mp4" title="Video title"]
 Video Description
-* You can use document syntax inside a short code
+* You can use the document syntax inside a short code
 * You can even nest short codes
 
 [audio src="http://soundcloudcom/audio.mp3"]
 [/video]
 ```
 
-Inside the layout of the short code you will have an access to the attributes inside an `options` object and to the content of the short code with the `content`. Let's create `/video.jade`.
+Inside the layout for the short code you will have an access to the attributes inside an `options` object and to the content of the short code with the `content`. Let's create `/video.jade`.
 
 ```jade
 div.video
@@ -364,37 +362,39 @@ Layouts also support paging. You can define paging in any layout by adding two p
 ---
 layout: /html5.ect
 blocks:
-  post: /post.jade
+  postPreview: /post-preview.nunjucks
 data:
   posts: /post.jade
 pageBy: posts
 pageSize: 3
 ---
 <ul>
-{% for post in data.posts.slice(layout.meta.pageSize * document.pageNumber, layout.meta.pageSize * document.pageNumber + pageSize) %}
+{% for post in paging.data %}
   <li>
-    {{ blocks.post(post) }}
+    {{ blocks.postPreview(post) }}
   </li>
 {% endfor %}
 </ul>
 {% if paging.next %}
 <a href="{% href(paging.next) %}">Next</a>
 <span>or</span>
-<a href="{% href(paging.page(document.pageNumber + 1)) %}">Next</a>
+<a href="{% href(paging.page(paging.current + 1)) %}">Next</a>
 {% endif %}
 ```
 
-There is a special object that holds paging information and it is available in the layout when you define `paging` in the layout meta data. `paging` object has several properties and some helper methods.
+There is a special object that holds paging information and it is available in the layout when you define `paging` in the layout meta data. The `paging` object has several properties and some helper methods.
 
 * `next` - This property gives you a `href` to the next page or `undefined` if there is no next page. 
-* `prev` - This property gives you a `href` to the previous page or `undefined` if this is the first page being redered. 
-* `nuberOfPages` - This is the total number of pages that will be rendered.
+* `prev` - This property gives you a `href` to the previous page or `undefined` if this is the first page being rendered. 
+* `data` - This property gives you a portion of the data for the page being rendered. 
+* `current` -  This is zero based index of the page being rendered.
+* `pages` - This is the total number of pages that will be rendered.
 * `page(pageNumber)` - This method returns a `href` to the page by a give number.
 
-You can access the current page by `document.pageNumber`. This is zero based index of the page being rendered. When you define paging in your layout it will render several web pages adding a page number before the extension. If assume there will be 3 pages the output of the layout rendering will be 3 files - `posts.html`, `posts.1.html`, `posts.2.html`.
+When you define a paging in your layout it will render several web pages adding a page number just before the extension. If we assume that there will be 3 pages the output of the rendering will be separated into 3 files - `posts.html`, `posts.1.html`, `posts.2.html`.
 
 ### Using auto layouts
-Sometime its not appropriate to add meta data to a document, but you still have to define a layout those document should use. You can define a layout to a set of documents in Mikser configuration file.
+Sometimes its not appropriate to add meta data to a document, but you still have to define a layout for those documents. You can define a layout to a set of documents in the Mikser configuration file.
 
 ```yaml
 layouts:
