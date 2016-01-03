@@ -58,8 +58,8 @@ The same rules that apply to the structured documents apply to the front matter.
 ```md
 ---
 layout: /blog/post.ect
-title: Item title
-description: Item description
+title: Post title
+description: Post description
 date: 2015-10-12
 ---
 # Example post
