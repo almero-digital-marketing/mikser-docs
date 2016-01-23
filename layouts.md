@@ -48,6 +48,7 @@ There are several objects that you can access inside a layout.
 * `layout` - This is an on object pointing to the current layout. You can access layout meta data by doing `layout.meta`.
 * `data` - This object holds all the data loaded by the queries defined in the layout's front matter `data` element.
 * `blocks` - This object has functions that will render the blocks defined in the layout's front matter `blocks` element.
+* `mikser` - This is an object that holds a reference to the Mikster instance. This gives you an access to full Mikser API in the layout. 
 
 Let's extend our previous example by using the document `title` and `description` in the `html5.ect` layout.
 

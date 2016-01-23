@@ -1,6 +1,6 @@
 ## Mikser documentation
 
-* [Folder structure](folder-structure.md)
+* [Folder structure](folders.md)
 * [Documents](documents.md)
 	* [Structured data documents](documents.md#structured-data-documents)
 	* [Markup documents with front matter](documents.md#markup-documents-with-front-matter)
@@ -20,9 +20,9 @@
 	* [Short codes](layouts.md#short-codes)
 	* [Paging](layouts.md#paging)
 	* [Using auto layouts](layouts.md#using-auto-layouts)
-* Tools
-	* Preprocessors and compilators
-	* Build systems
+* [External tools](tools.md)
+	* [Preprocessors and compilators](tools.md#preprocessors-and-compilators)
+	* [Build systems](tools.md#build-systems)
 * Server
 	* Live reload
 	* Watching folders
@@ -38,6 +38,7 @@
 		* Collections plug-in
 		* Images plug-in
 		* Videos plug-in
+		* Versions plug-in
 		* Caching plug-in
 	* Third-party plug-ins
 	* Custom plug-ins
