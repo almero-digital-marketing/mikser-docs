@@ -23,13 +23,13 @@
 * [External tools](tools.md)
 	* [Preprocessors and compilators](tools.md#preprocessors-and-compilators)
 	* [Build systems](tools.md#build-systems)
-* Server
-	* Live reload
-	* Watching folders
-	* Real-time preview
-* Debugging
-	* Error diagnostics
-	* Debug information
+* [Development server](server.md)
+	* [Live reload](server.md#live-reload)
+	* [Real-time preview](server.md#real-time-preview)
+	* [Watching folders](server.md#watching-folders)
+* [Debugging](debugging.md)
+	* [Error diagnostics](debugging.md#error-diagnostics)
+	* [Debug information](debugging.md#debug-information)
 * Plug-ins
 	* Layout plug-ins
 	* System plug-ins
