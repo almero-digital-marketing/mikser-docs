@@ -1,10 +1,10 @@
 ## External tools
-Mikser is very conservative about the usage of external tools. It doest come with any plug-ins and subsystems that try to build, compile and pre-process things. It provides hooks for using those tools as command line utilities. To keep things simple there are just two hooks in Mikser.
+Mikser is very lean about the usage of external tools. It doesn't come with any plug-ins and subsystems that try to build, compile and pre-process style sheets. It provides hooks for using those tools as command line utilities. To keep things simple there are just two hooks in Mikser.
 
-* `compile` - This hook is executed prior to any generation. It is a great place to pre-process your [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/) or compile scripts like [CoffeeScript](http://coffeescript.org/) and [TypeScript](http://www.typescriptlang.org/). You can configure as many commands as you need.
-* `build` - This hook is executed after a generation is over. You can use it to add and extra build step like minify images, scripts, lint your files or run an external build system like [Grunt](http://gruntjs.com/) and [Gulp](http://gulpjs.com/). You can configure as many commands as you need.
+* `compile` - This hook is executed prior to any generation or when Mikser detects a change in files folder. It is a great place to pre-process your [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/) or compile scripts like [CoffeeScript](http://coffeescript.org/) and [TypeScript](http://www.typescriptlang.org/). You can configure as many commands as you need.
+* `build` - This hook is executed after a generation is over. You can use it to add an extra build step to minify images, scripts, lint your files or run an external build system like [Grunt](http://gruntjs.com/) and [Gulp](http://gulpjs.com/) to do it. You can configure as many commands as you need.
 
-For each of the hooks you can configure commands either by specifying the command or add an additional pattern that will filter the files this command is relevant for. By default Mikser watches the folder of your site for changes and takes action when something changes, the pattern tells Mikser what to execute on a file change. By default Mikser will inspect commands for common compilators and preprocessors and add appropriate patter to the command. Currently there is build-in support for [Less](http://lesscss.org/), [Sass](http://sass-lang.com/), [CoffeeScript](http://coffeescript.org/) and [TypeScript](http://www.typescriptlang.org/).
+For the `compile` hook you can configure commands either by specifying the command or add an additional pattern that will filter the files this command is relevant for. By default Mikser watches the `files` folder of your site for changes and takes action when something changes, the pattern filters what command to execute when a file changes. By default Mikser will inspect commands for common compilators and preprocessors and add the default pattern to the command. Currently there is a build-in support for [Less](http://lesscss.org/), [Sass](http://sass-lang.com/), [CoffeeScript](http://coffeescript.org/) and [TypeScript](http://www.typescriptlang.org/).
 
 ### Preprocessors and compilators
 Mikser watches and compiles only files located in `files` folder. Let's see how we can configure Mikser to use [Less](http://lesscss.org/) and [CoffeeScript](http://coffeescript.org/).
@@ -55,19 +55,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-newer');
 
   grunt.registerTask('compile', ['newer:less:dev']);
-  grunt.registerTask('default', ['less:dist']);
+  grunt.registerTask('default', ['newer:less:dist']);
 };
 ```
 
 ### Build systems
-Once the generation is over Mikser will execute the build commands configured in `mikser.yaml`. This the best place to configure the minification of your assets or lint your files. You can use external utilities one by one or use a build system where you can configure all actions together. For example it's a good idea to output the result of this step in the separate `build` folder  which you can use to upload to your hosting.
+Once the generation is over Mikser will execute the build commands configured in `mikser.yaml`. This the best place to configure the minification of your assets or lint your files. You can use external utilities one by one or use a build system where you can configure all actions together. For example it's a good idea to output the result of this step in the separate `build` folder which you can later upload to your hosting server.
 
 ```yaml
 build:
 - grunt
 ```
 
-This configuration will execute `grunt` each time generation is over. By default mikes will regenerate every time document or layout has been changed. 
+This configuration will execute `grunt` each time generation is over. By default Mikser will regenerate every time document or layout has been changed. 
 
 ```js
 module.exports = function(grunt) {
