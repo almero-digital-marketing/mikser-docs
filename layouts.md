@@ -285,7 +285,7 @@ Now let's create another layout that will have different links for the navigatio
 ```
 
 #### Using plain blocks or partials
-Now lets use the first layout as a block inside `/html5.ect` this will add a menu to every page.
+Now lets use the first layout as a block inside `/html5.ect`. This will add a menu to every page.
 
 ```html
 ---
@@ -315,7 +315,7 @@ blocks:
 </div>
 ```
 
-This will render the `index-navigation.ect` instead of `navigation.ect` inside `html5.ect`. 
+This will render the `index-navigation.ect` instead of `navigation.ect` for the index page. 
 
 ```html
 ---
@@ -333,7 +333,7 @@ partials:
 </html>
 ```
 
-If we were using partials insted of blocks inside `html5.ect` we will get the default navigation. 
+If we use partials instead of blocks inside `html5.ect` the index page will have the default navigation as any other page. 
 
 Everything that applies to the layouts applies to the blocks and partials as well. All blocks and partials defined in the `/html5.ect` layout will be available to the child layouts using it. The data defined inside blocks is available only in the block layout chain. The same is true for the data defined in the document layout chain.
 
@@ -348,7 +348,7 @@ partials
 <%- @partials.showcase() %>
 ```
 
-If you want to get get access to the data defined in the master layout inside a block or partial you can use `global` instead of `data`. Here is the definition of `/shop/showcase.ect` partial using the data defined in the master layout.
+If you want to get get access to the data defined in the master layout inside a block or partial you can use `global` instead of `data`. Here is the definition of `/shop/showcase.ect` partial. It is using the data defined in the master layout.
 
 ```html
 <ul>
