@@ -201,7 +201,7 @@ data:
 As you can see you have an access to all of the meta data inside the query. In this example you will load all documents that has `Feature 1` or `Feature 1` which are defined in the layout's meta data. You can use any JavaScript expression in the queries. Queries use [MongoDB query syntax](https://docs.mongodb.org/v3.0/reference/operator/query/).
 
 #### Live queries
-When you mark query as live Mikser will regenerate all the documents using the layout which has the live query once the data returned by the query change. In our example when you add, remove or change item in the shop.
+When you mark query as live Mikser will regenerate all the documents using the layout which has the live query once the data returned by the query change. In our example when you add, remove or change an item document.
 ```html
 ---
 layout: /html5.ect
@@ -265,10 +265,10 @@ If you don't specify a `href` in the document's meta data it will be initialized
 
 If you want to get a relative path to the root you can user `href('/')` to get it or pass get relative URL to a style sheet by `href('/styles/style.css')`.
 
-There is another helper method you can use instead of `href`. You can use it when you want to get a reference to a document that might be missing in the beginning. `hrefEntity` acts the same as `href` with the only difference that it will return `undefined` if the document you are referring is missing. Later on when the document is present Mikser will regenerate the documents that are using this layout. Which is not the case when referring documents with `href` 
+There is another helper method you can use instead of `href`. You can use it when you want to get a reference to a document that might be missing in the beginning. `hrefEntity` acts the same as `href` with the only difference that it will return `undefined` if the document you are referring is missing. Later on when the document is present Mikser will regenerate the pages referring this document. Which is not the case when referring documents with `href`.
 
 ### Blocks and Partials
-You can use any layout as block or partial in any other layout. The blocks and partials are used the same way. The main difference is that when you use blocks in a parent layout you can override it in a child one. Partials does not affect other layouts partials. Blocks are similar to the virtual methods in OOP. Blocks are very convenient when you want to define the generic page layout and later on provide the exact implementation for different layouts. 
+You can use any layout as block or partial in any other layout. The blocks and partials are used the same way. The main difference is that when you use a block in a parent layout you can override it later in a child one. Partials does not affect parent layout partials. Blocks are similar to the virtual methods in OOP. Blocks are very convenient when you want to define a generic page layout and later on provide the exact implementation for different child layouts. 
 
 Let's create a layout that will render a navigation for our site. We will call it `/navigation.ect`.
 
