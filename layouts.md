@@ -201,7 +201,7 @@ data:
 As you can see you have an access to all of the meta data inside the query. In this example you will load all documents that has `Feature 1` or `Feature 1` which are defined in the layout's meta data. You can use any JavaScript expression in the queries. Queries use [MongoDB query syntax](https://docs.mongodb.org/v3.0/reference/operator/query/).
 
 #### Live queries
-You can define query as live inside query definition. When you mark query as live Mikser will regenerate the the documents using this layout once the data returned by the query change. In our example when you add another item in the shop.
+When you mark query as live Mikser will regenerate all the documents using the layout which has the live query once the data returned by the query change. In our example when you add another item in the shop.
 ```html
 ---
 layout: /html5.ect
