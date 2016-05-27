@@ -25,6 +25,8 @@ Mikser injects those scripts when serving pages so your output result stays clea
 livereload: false
 ```
 
+Live reload will try to reload the style sheets and images without refreshing the page. If you have a lot of imports inside your style sheets this technique might not work. You can force Mikser to refresh the page instead of reloading the style sheets all the time by running Mikser with `-L` flag or the full option `--force-refresh`.
+
 ### Real-time preview
 When dealing with static site generators you regenerate your site after a document or layout changes. Most of the other solutions we tried do a full regeneration even when its not necessary. Mikser keeps track of its state and regenerates only the pages that are affected by the change. Because Mikser stores this info in a database it can do this even across different runs. For example you can run Mikser then stop it, update from your source control and run Mikser again and it will regenerate only the things changed and their relations.
 

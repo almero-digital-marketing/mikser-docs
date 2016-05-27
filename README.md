@@ -13,13 +13,15 @@
 	* [Using data queries](layouts.md#using-data-queries)
 		* [Layout queries](layouts.md#layout-queries)
 		* [Context queries](layouts.md#context-queries)
+		* [Live queries](layouts.md#live-queries)
 	* [Referring other documents from layouts](layouts.md#referring-other-documents-from-layouts)
-	* [Blocks (Partials)](layouts.md#blocks-partials)
-		* [Using plain blocks](layouts.md#using-plain-blocks)
-		* [Using blocks with options](layouts.md#using-blocks-with-options)
+	* [Blocks and Partials](layouts.md#blocks-and-partials)
+		* [Using plain blocks](layouts.md#using-plain-blocks-or-partials)
+		* [Using blocks with options](layouts.md#using-blocks-or-partials-with-options)
 	* [Short codes](layouts.md#short-codes)
 	* [Paging](layouts.md#paging)
 	* [Using auto layouts](layouts.md#using-auto-layouts)
+	* [Importing meta data from external file](layouts.md#importing-meta-data-from-external-file)
 * [External tools](tools.md)
 	* [Preprocessors and compilators](tools.md#preprocessors-and-compilators)
 	* [Build systems](tools.md#build-systems)
@@ -30,6 +32,12 @@
 * [Debugging](debugging.md)
 	* [Error diagnostics](debugging.md#error-diagnostics)
 	* [Debug information](debugging.md#debug-information)
+* Multi-language web sites
+	* Referring documents from different languages
+	* Alternates
+* Multi-domain web sites
+	* Shared resources
+	* Asset replication
 * Plug-ins
 	* Layout plug-ins
 	* System plug-ins
@@ -42,12 +50,6 @@
 		* Caching plug-in
 	* Third-party plug-ins
 	* Custom plug-ins
-* Multi-language web sites
-	* Referring documents from different languages
-	* Alternates
-* Multi-domain web sites
-	* Shared resources
-	* Asset replication
 * Configuration
 * Command line arguments
 * Continuous integration

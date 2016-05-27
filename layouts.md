@@ -5,7 +5,8 @@ Mikser selects the right template engine to use based on the layout extension. L
 
 * `layout` - Each layout can define a parent layout. This is the absolute path to the parent layout. The absolute path is relative to the `layouts` folder.
 * `data` - This property is used to define data queries used by the layout to retrieve data from the database.
-* `blocks` - A list of layouts which will imported as blocks(partials) and used inside the layout.
+* `blocks` - A list of layouts which will be imported as blocks inside the layout.
+* `partial` - A list of layouts which will be imported as partials inside the layout.
 * `shrotcodes` - A list of layouts which will be exposed as short codes that can be used inside the documents which use this layout.
 * `plugins` - A list of plug-ins used in the layout.
 
@@ -199,6 +200,20 @@ data:
 ```
 As you can see you have an access to all of the meta data inside the query. In this example you will load all documents that has `Feature 1` or `Feature 1` which are defined in the layout's meta data. You can use any JavaScript expression in the queries. Queries use [MongoDB query syntax](https://docs.mongodb.org/v3.0/reference/operator/query/).
 
+#### Live queries
+You can define query as live inside query definition. When you mark query as live Mikser will regenerate the the documents using this layout once the data returned by the query change. In our example when you add another item in the shop.
+```html
+---
+layout: /html5.ect
+data:
+  items: /shop/item.swig
+  orderedItems:
+    layout: /shop/item.swig
+    orderBy: meta.title
+    live: true
+---
+```
+
 ### Referring other documents from layouts
 One of the very core things in writing a layout is refereeing to other documents or assets. You can always refer to a document by using `document.url` or the absolute URL of an asset `/images/image.jpg`. The problem with this approach is that you won't be able to open you generated web site from the file system. And it should be placed in the domain root when uploaded to a hosting provider. It's much better to use relative URL's. Mikser defines a helper method `href` that gives you a relative URL.
 
@@ -252,16 +267,27 @@ If you don't specify a `href` in the document's meta data it will be initialized
 
 If you want to get a relative path to the root you can user `href('/')` to get it or pass get relative URL to a style sheet by `href('/styles/style.css')`.
 
-### Blocks (Partials)
-You can use any layout as block(partial) in any other layout. In Mikser we use the term blocks and you have to define them in the layout meta data. Let's create a layout that will render a navigation for our site. We will call it `/navigation.ect`.
+There is another helper method you can use instead of `href`. You can use it when you want to get a reference to a document that might be missing in the beginning. `hrefEntity` acts the same as `href` with the only difference that it will return `undefined` if the document you are referring is missing. Later on when the document is present Mikser will regenerate the documents that are using this layout. Which is not the case when referring documents with `href` 
+
+### Blocks and Partials
+You can use any layout as block or partial in any other layout. The blocks and partials are used the same way. The main difference is that when you use blocks in a parent layout you can override it in a child one. Partials does not affect other layouts partials. Blocks are similar to the virtual methods in OOP. Blocks are very convenient when you want to define the generic page layout and later on provide the exact implementation for different layouts. 
+
+Let's create a layout that will render a navigation for our site. We will call it `/navigation.ect`.
 
 ```html
 <a href="<%- @href('/services.md') %>"><%= @href('/services.md').meta.title %></a>
 <a href="<%- @href('/contacts.md') %>"><%= @href('/contacts.md').meta.title %></a>
 ```
 
-#### Using plain blocks
-Now lets use this layout as a block inside `/html5.ect` so every page will have a menu.
+Now let's create another layout that will have different links for the navigation and call it `/index-navigation.ect`
+
+```html
+<a href="<%- @href('/products.md') %>"><%= @href('/products.md').meta.title %></a>
+<a href="<%- @href('/promotions.md') %>"><%= @href('/promotions.md').meta.title %></a>
+```
+
+#### Using plain blocks or partials
+Now lets use the first layout as a block inside `/html5.ect` this will add a menu to every page.
 
 ```html
 ---
@@ -279,37 +305,89 @@ blocks:
 </html>
 ```
 
-Everything that applies to the layouts applies to the blocks as well. All blocks defined in the `/html5.ect` layout will be available to the child layouts using it. If some of them override it with another block it will be used in `/html5.ect` instead of the `/navigation.ect`.
+Now lets create another layout for the index page. It will use `/html5.ect` as its parent layout and will override the menu.
 
-#### Using blocks with options
-You can pass any object to a block and refer it inside the block as `options`. Here is a block `/post-preview.nunjucks` that will render a preview of a post.
+```html
+---
+blocks:
+  navigation: /index-navigation.ect
+---
+<div class="index">
+<%- @content %>
+</div>
+```
+
+This will render the `index-navigation.ect` instead of `navigation.ect` inside `html5.ect`. 
+
+```html
+---
+partials:
+  navigation: /navigation.ect
+---
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <%- @partials.navigation() %>
+    <%- @content %>
+  </body>
+</html>
+```
+
+If we were using partials insted of blocks inside `html5.ect` we will get the default navigation. 
+
+Everything that applies to the layouts applies to the blocks and partials as well. All blocks and partials defined in the `/html5.ect` layout will be available to the child layouts using it. The data defined inside blocks is available only in the block layout chain. The same is true for the data defined in the document layout chain.
+
+```html
+---
+layout: /html5.ect
+data:
+  items: /shop/item.swig
+partials
+  showcase: /shop/showcase.ect
+---
+<%- @partials.showcase() %>
+```
+
+If you want to get get access to the data defined in the master layout inside a block or partial you can use `global` instead of `data`. Here is the definition of `/shop/showcase.ect` partial using the data defined in the master layout.
+
+```html
+<ul>
+<% for item in @global.items : %>
+<li><%- item.meta.title %></li>
+<% end %>
+</ul>
+
+```
+
+#### Using blocks or partials with options
+You can pass any object to a block or partial and refer it inside it as `options`. Here is a partial `/post-preview.nunjucks` that will render a preview of a post.
 
 ```html
 <a href="{{ href(post) }}">{{ options.meta.title }}</a>
 <img src="{{ href(options.meta.image) }}">
 ```
 
-Now we will update `/posts.nunjuncks` so it will use this block.
+Now we will update `/posts.nunjuncks` so it will use this partial.
 
 ```html
 ---
 layout: /html5.ect
-blocks:
+partials:
   postPreview: /post-preview.nunjucks
 data:
   posts: /post.jade
 ---
 <ul>
 {% for post in data.posts %}
-  <li>
-    {{ blocks.postPreview(post) }}
-  </li>
+  <li>{{ partials.postPreview(post) }}</li>
 {% endfor %}
 </ul>
 ```
 
 ### Short codes
-Short codes are very similar to the blocks. The main difference is that they can be used inside a document. A document can use only the short codes defined in its layout.
+Short codes are very similar to the partials. The main difference is that they can be used inside a document. A document can use only the short codes defined in its layout.
 
 ```md
 ---
@@ -394,6 +472,10 @@ There is a special object that holds paging information and it is available in t
 
 When you define a paging in your layout it will render several web pages adding a page number just before the extension. If we assume that there will be 3 pages the output of the rendering will be separated into 3 files - `posts.html`, `posts.1.html`, `posts.2.html`.
 
+If you want to add a reference to a page inside a layout that is different from the one that has the paging definition you can user `hrefPage` helper method.
+
+* `hrefPage(href, page)` - gets a reference to a specific document page.
+
 ### Using auto layouts
 Sometimes its not appropriate to add meta data to a document, but you still have to define a layout for those documents. You can define a layout to a set of documents in the Mikser configuration file.
 
@@ -406,3 +488,7 @@ layouts:
 ```
 
 This will set the layout for all documents inside `/posts` folder to `/post.jade` and `/shop/items.swig` to all documents inside `/items` folder.
+
+
+### Importing meta data from external file
+Both documents and layouts can have their meta data taken from another file. By convention the meta data file has to be inside the same folder and with the same name as the layout or the document itself but with different extension like `.yml`, `.json`, `.toml` or any other meta data format supported by Mikser.
