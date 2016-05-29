@@ -32,12 +32,14 @@
 * [Debugging](debugging.md)
 	* [Error diagnostics](debugging.md#error-diagnostics)
 	* [Debug information](debugging.md#debug-information)
-* Multi-language web sites
+* [Multi-domain web sites](domains.md)
+	* [Asset replication](domains.md#asset-replication)
+	* [Shared resources](domains.md#shared-resources)
+	* [Virtual hosts](domains.md#virtual-hosts)
+* [Localization](localization.md)
+	* [Multi-language web sites](localization.md#multi-language-web-sites)
 	* Referring documents from different languages
 	* Alternates
-* Multi-domain web sites
-	* Shared resources
-	* Asset replication
 * Plug-ins
 	* Layout plug-ins
 	* System plug-ins
