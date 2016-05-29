@@ -38,8 +38,8 @@
 	* [Virtual hosts](domains.md#virtual-hosts)
 * [Localization](localization.md)
 	* [Multi-language web sites](localization.md#multi-language-web-sites)
-	* Referring documents from different languages
-	* Alternates
+	* [Referring documents from different languages](localization.md#referring-documents-from-different-languages)
+	* [Alternates](localization.md#alternates)
 * Plug-ins
 	* Layout plug-ins
 	* System plug-ins
