@@ -23,3 +23,5 @@ domains: true
 ```
 
 If point your DNS to the IP of the server running Mikser and configure Mikser to run on port 80 you will be able to access your sites directly.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78544431-1/domains.md?pixel)](https://github.com/igrigorik/ga-beacon)

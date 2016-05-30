@@ -43,3 +43,5 @@ mikser.run({
 ```
 
 If you disable both the development server and the watching feature by `mikser -S -W` Mikser will exit immediately after the generation has finished.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78544431-1/server.md?pixel)](https://github.com/igrigorik/ga-beacon)

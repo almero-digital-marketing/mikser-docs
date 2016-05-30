@@ -13,3 +13,5 @@ Mikser is a flat file CMS. Web site is generated from files separated into sever
 * `mikser.yml` - This is the default Mikser configuration file. Mikser does not auto reload this file. If you change the configuration you have to restart Mikser.
 * `mikser.js` - If you use Mikser as a local dependency you can initialize it here by doing `require('mikser').run();`. You can start your project with `node mikser`.
 * `*.yml` - You can have several environments that will overwrite `mikser.yml` configuration. This feature is very useful for using different settings for development in `dev.yml`, for continuous integration in `ci.yml` and for testing in `test.yml`. You can run Mikser with any of them by doing `mikser -e dev` or `mikser -e ci`. If you use Mikser as local dependency you can do the same with `node mikser -e dev` or `node mikser -e ci`.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78544431-1/folders.md?pixel)](https://github.com/igrigorik/ga-beacon)

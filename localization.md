@@ -83,3 +83,5 @@ If you have multiple language versions of a URL, each language page must identif
 ```
 
 In this example we assume that the languages are organized in different domains. If they are under the same domain we can remove the leading `http:/`.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78544431-1/localization.md?pixel)](https://github.com/igrigorik/ga-beacon)

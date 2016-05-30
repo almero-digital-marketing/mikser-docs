@@ -111,3 +111,5 @@ category: nodejs
 date: 2015-12-10
 postId: post-1.md
 ```
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78544431-1/documents.md?pixel)](https://github.com/igrigorik/ga-beacon)

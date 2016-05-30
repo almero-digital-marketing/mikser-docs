@@ -490,3 +490,5 @@ This will set the layout for all documents inside `/posts` folder to `/post.jade
 
 ### Importing meta data from external file
 Both documents and layouts can have their meta data taken from another file. By convention the meta data file has to be inside the same folder and with the same name as the layout or the document itself but with different extension like `.yml`, `.json`, `.toml` or any other meta data format supported by Mikser.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78544431-1/layouts.md?pixel)](https://github.com/igrigorik/ga-beacon)

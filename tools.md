@@ -111,3 +111,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['newer:less:dist', 'newer:cssmin:dist']);
 };
 ```
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78544431-1/tools.md?pixel)](https://github.com/igrigorik/ga-beacon)

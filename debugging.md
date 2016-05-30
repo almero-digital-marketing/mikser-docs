@@ -16,3 +16,5 @@ If you more details whats going on under the cover you can run Mikser with the d
 There are several options to limit the output information. You can do it by providing the list of Mikser's module names `mikser -d manager,generator,server` or by excluding a list of modules by `mikser -D runtime`. The first command will output the debug information only for manager,generator and server modules. The second command will filter the debug information for runtime module and show all the rest. This is the list of [Mikser modules](https://github.com/almero-digital-marketing/mikser/tree/master/lib). 
 
 If you need to narrow down an error for a specific use case you can filter the debug information by creating a file called `debug` inside the `runtime` folder and adding the JavaScript regular expressions inside. Mikser will output the debug information that matches any of the expressions inside the file. Expressions should be added one at a line.This is very useful technique when developing Mikser plug-ins.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78544431-1/debugging.md?pixel)](https://github.com/igrigorik/ga-beacon)
