@@ -6,7 +6,7 @@ Mikser selects the right template engine to use based on the layout extension. L
 * `layout` - Each layout can define a parent layout. This is the absolute path to the parent layout. The absolute path is relative to the `layouts` folder.
 * `data` - This property is used to define data queries used by the layout to retrieve data from the database.
 * `blocks` - A list of layouts which will be imported as blocks inside the layout.
-* `partial` - A list of layouts which will be imported as partials inside the layout.
+* `partials` - A list of layouts which will be imported as partials inside the layout.
 * `shrotcodes` - A list of layouts which will be exposed as short codes that can be used inside the documents which use this layout.
 * `plugins` - A list of plug-ins used in the layout.
 
